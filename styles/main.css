@@ -1,0 +1,113 @@
+/* reset */
+body {
+  font-family: 'Rubik';
+  margin: 20px;
+  background: var(--secondary);
+}
+a, p, h1, h2, h3, section {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+/* theme colors */
+:root {
+  --primary: #1c9f6d;
+  --secondary: #f4f4f4;
+  --default: #333;
+}
+
+/* layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main-nav {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--secondary);
+}
+.main-nav a:last-child {
+  margin-left: auto;
+}
+article {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* content */
+h1, h2, h3, p, a {
+  color: var(--default);
+}
+.main-content article p {
+  line-height: 1.5em;
+  color: #777;
+  margin-top: 20px;
+}
+.main-content article h2 {
+  margin-bottom: 20px;
+}
+article footer {
+  border-top: 1px dashed var(--secondary);
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-content article a {
+  color: var(--primary);
+  background: transparent;
+  text-decoration: underline;
+}
+
+/* components */
+.btn {
+  background: #1c9f6d;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+/* utility */
+.rounded {
+  border-radius: 8px;
+}
+.underlined {
+  text-decoration: underline;
+}
+.m-top {
+  margin-top: 40px;
+}
+.center{
+  text-align: center;
+}
+
+/* Selector Specificity 
+
+  TYPE --> p {}, h2 {}, article {} --> 1
+ 
+  CLASS --> .btn {}, .leading {} --> 10
+
+  ID --> #gallery {} --> 100
+
+  --- examples ---
+ 
+  .btn {} --> 10
+
+  .main-content article a {} --> 10 + 1 + 1 = 12
+
+*/
