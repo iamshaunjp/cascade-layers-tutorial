@@ -4,7 +4,7 @@ body {
   margin: 20px;
   background: var(--secondary);
 }
-a, p, h1, h2, h3, section {
+p, h1, h2, h3, section {
   margin: 0 0 10px 0;
   padding: 0;
 }
@@ -43,7 +43,7 @@ article {
 }
 
 /* content */
-h1, h2, h3, p, a {
+h1, h2, h3, p {
   color: var(--default);
 }
 .main-content article p {
@@ -61,21 +61,8 @@ article footer {
   align-items: center;
   justify-content: space-between;
 }
-.main-content article a {
-  color: var(--primary);
-  background: transparent;
-  text-decoration: underline;
-}
 
 /* components */
-.btn {
-  background: #1c9f6d;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-}
 .card {
   background: white;
   border-radius: 8px;
@@ -96,18 +83,22 @@ article footer {
   text-align: center;
 }
 
-/* Selector Specificity 
+@layer ui {
+  .btn {
+    background: #1c9f6d;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+  }
+}
 
-  TYPE --> p {}, h2 {}, article {} --> 1
- 
-  CLASS --> .btn {}, .leading {} --> 10
+@layer content {
+  .main-content article a {
+    color: var(--primary);
+    background: transparent;
+    text-decoration: underline;
+  }
+}
 
-  ID --> #gallery {} --> 100
-
-  --- examples ---
- 
-  .btn {} --> 10
-
-  .main-content article a {} --> 10 + 1 + 1 = 12
-
-*/
